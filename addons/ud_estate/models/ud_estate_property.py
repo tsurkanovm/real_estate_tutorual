@@ -13,11 +13,9 @@ class Property(models.Model):
         string='Property State',
         default='new'
     )
-
     description = fields.Text(string='Property Description')
     postcode = fields.Char(string='Postcode')
     price = fields.Float(string='Expected Price', nullable=False, required=True)
-
     best_offer = fields.Float(string='Best Offer')
     available_from = fields.Date(string='Available From',
                                  default=fields.Date.today() + relativedelta(months=3), copy=False)
@@ -28,8 +26,12 @@ class Property(models.Model):
     total_area = fields.Integer(string='Total Area')
     garden = fields.Boolean(string='Garden')
     garage = fields.Boolean(string='Garage')
-
     garden_orientation = fields.Selection(
         [('north', 'North'), ('south', 'South'), ('east', 'East'), ('west', 'West')],
         string='Garden Orientation'
     )
+
+    # relational fields
+    type_id = fields.Many2one('ud_estate.property.type', string='Property Type')
+    partner_id = fields.Many2one('res.partner', string='Bayer', copy=False)
+    user_id = fields.Many2one('res.users', string='Salesman', default=lambda self: self.env.user)
