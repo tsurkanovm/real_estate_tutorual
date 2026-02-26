@@ -1,0 +1,16 @@
+# Ignore everything at root level
+*
+!.gitignore
+
+# Whitelist specific items
+!addons/
+!commands/
+!docker-compose.yaml
+
+# Ignore everything in addons except ud_estate
+addons/*
+!addons/ud_estate/
+!addons/ud_estate/**
+
+# Make sure we keep the directory structure
+!*/
