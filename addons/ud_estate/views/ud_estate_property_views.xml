@@ -29,9 +29,13 @@
         <field name="arch" type="xml">
             <form string="Property">
                 <sheet>
-                    <h1 class="mb32">
-                        <field name="name"/>
-                    </h1>
+                    <group>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <field name="tag_ids" widget="many2many_tags" string=""/>
+                    </group>
+
                     <group>
                         <group>
                             <field name="state" string="Status"/>
@@ -108,6 +112,13 @@
                 </sheet>
             </form>
         </field>
+    </record>
+
+    <!--    Property Tag -->
+    <record id="ud_estate_property_tag_action" model="ir.actions.act_window">
+        <field name="name">Property Tags</field>
+        <field name="res_model">ud_estate.property.tag</field>
+        <field name="view_mode">list,form</field>
     </record>
 
 </odoo>

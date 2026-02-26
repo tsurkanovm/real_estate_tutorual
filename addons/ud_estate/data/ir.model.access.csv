@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 ud_estate.access_property,access_property,ud_estate.model_ud_estate_property,base.group_user,1,1,1,1
 ud_estate.access_property_type,access_property_type,ud_estate.model_ud_estate_property_type,base.group_user,1,1,1,1
+ud_estate.access_property_tag,access_property_tag,ud_estate.model_ud_estate_property_tag,base.group_user,1,1,1,1
