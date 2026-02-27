@@ -1,6 +1,6 @@
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 class Property(models.Model):
     _name = 'ud_estate.property'
@@ -64,3 +64,23 @@ class Property(models.Model):
                 property.best_offer = max(property.offer_ids.mapped('price'))
             else:
                 property.best_offer = 0.0
+
+
+    # -------------------------------------------------------------------------
+    # ONCHANGE METHODS
+    # works only on form context - do not trigger if created model programmatically
+    # compute works in both cases
+    # -------------------------------------------------------------------------
+    @api.onchange('garden')
+    def _onchange_garden(self):
+        if self._origin.id: # if it not new record
+            return {'warning': {
+                'title': _("Warning"),
+                'message': ('You are change existing property. Default values will not be set.'),}}
+
+        if self.garden:
+            self.garden_orientation = 'north'
+            self.garden_area = 10
+        else:
+            self.garden_area = 0
+            self.garden_orientation = False
