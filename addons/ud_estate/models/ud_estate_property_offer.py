@@ -1,6 +1,6 @@
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 from odoo import api, fields, models, _
 
 class Property(models.Model):
@@ -9,7 +9,7 @@ class Property(models.Model):
 
     price = fields.Float(string='Price')
     status = fields.Selection([('accepted', 'Accepted'), ('rejected', 'Rejected')], string='Status')
-    property_id = fields.Many2one('ud_estate.property', string='Property', required=True)
+    property_id = fields.Many2one('ud_estate.property', string='Property', required=True, ondelete='cascade')
     partner_id = fields.Many2one('res.partner', string='Bayer', required=True)
     validity = fields.Integer(string='Validity', default=7)
 
@@ -17,6 +17,18 @@ class Property(models.Model):
     date_deadline = fields.Datetime(string='Deadline',
                                     compute='_compute_date_deadline',
                                     inverse='_inverse_date_deadline')
+
+    #constraints
+    _check_price_positive = models.Constraint(
+        'CHECK(price > 0)',
+        'Price must be positive.',
+    )
+
+    # @api.constrains('property_id.expected_price', 'price')
+    # def _check_description(self):
+    #     for record in self:
+    #         if record.property_id.expected_price <= record.price *0.9:
+    #             raise ValidationError(_("Selling price must be higher than 90% of expected price."))
 
     # -------------------------------------------------------------------------
     # COMPUTE AND INVERSE

@@ -1,13 +1,15 @@
 from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools import float_compare, float_is_zero
 
 class Property(models.Model):
     _name = 'ud_estate.property'
     _description = 'Real Estate Property'
 
     name = fields.Char(string='Title', required=True)
-    active = fields.Boolean(string='Active')
+    active = fields.Boolean(string='Active', default=True) # todo - delete?
+
     state = fields.Selection(
         [('new', 'New'), ('received', 'Offer Received'), ('accepted', 'Offer Accepted'), ('sold', 'Sold'), ('cancelled', 'Cancelled')],
         string='Property State',
@@ -15,7 +17,8 @@ class Property(models.Model):
     )
 
     postcode = fields.Char(string='Postcode')
-    price = fields.Float(string='Expected Price', required=True)
+    price = fields.Float(string='Selling Price', copy=False, readonly=True)
+    expected_price = fields.Float(string='Expected Price', required=True)
     available_from = fields.Date(string='Available From',
                                  default=fields.Date.today() + relativedelta(months=3), copy=False)
     bedrooms = fields.Integer(string='Bedrooms', default=2)
@@ -41,6 +44,38 @@ class Property(models.Model):
     total_area = fields.Integer(string='Total Area', compute='_compute_total_area')
     description = fields.Text(string='Property Description', compute='_compute_description', store=True)
     best_offer = fields.Float(string='Best Offer', copy=False, compute='_compute_best_offer')
+
+    #constraints
+    _check_price_positive = models.Constraint(
+        'CHECK(price > 0)',
+        'Price must be positive.',
+    )
+    _check_expected_price_positive = models.Constraint(
+        'CHECK(expected_price > 0)',
+        'Price must be positive.',
+    )
+    _check_garden_area_positive = models.Constraint(
+        'CHECK(garden_area >= 0)',
+        'Garden area must be positive.',
+    )
+    _check_living_area_positive = models.Constraint(
+        'CHECK(living_area > 0)',
+        'Living area must be positive.',
+    )
+    _check_facades_positive = models.Constraint(
+        'CHECK(facades > 0)',
+        'Facades must be positive.',
+    )
+    _check_bedrooms_positive = models.Constraint(
+        'CHECK(bedrooms > 0)',
+        'Bedrooms must be positive.',
+    )
+
+    @api.constrains('expected_price', 'price')
+    def _check_selling_price(self):
+        for record in self:
+            if not float_is_zero(record.price, precision_digits=2) and float_compare(record.expected_price * 0.9, record.price, precision_digits=2) > 0:
+                raise ValidationError(_("Selling price must be higher than 90% of expected price."))
 
     # -------------------------------------------------------------------------
     # COMPUTE METHODS

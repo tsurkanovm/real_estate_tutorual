@@ -6,3 +6,8 @@ class Property(models.Model):
     _description = 'Property Types'
 
     name = fields.Char(string='Title',  required=True)
+
+    _name_uniq = models.Constraint(
+        'unique(name)',
+        'The name of type must be unique!',
+    )
