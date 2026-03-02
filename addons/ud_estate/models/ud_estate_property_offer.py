@@ -1,6 +1,7 @@
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
-from odoo import api, fields, models
+from odoo.exceptions import UserError
+from odoo import api, fields, models, _
 
 class Property(models.Model):
     _name = 'ud_estate.property.offer'
@@ -18,7 +19,7 @@ class Property(models.Model):
                                     inverse='_inverse_date_deadline')
 
     # -------------------------------------------------------------------------
-    # COMPUTE AND INVERSE METHODS
+    # COMPUTE AND INVERSE
     # -------------------------------------------------------------------------
     @api.depends('validity')
     def _compute_date_deadline(self):
@@ -33,3 +34,35 @@ class Property(models.Model):
 
             now = fields.Datetime.now()
             offer.validity = (deadline - now).days
+
+    # -------------------------------------------------------------------------
+    # ONCHANGE
+    # -------------------------------------------------------------------------
+    @api.onchange('status')
+    def _onchange_status(self):
+        if self.status == 'accepted':
+            if self._property_already_has_accepted_offer(self):
+                raise UserError('Another offer has already been accepted for this property.')
+
+
+    # -------------------------------------------------------------------------
+    # ACTIONS
+    # -------------------------------------------------------------------------
+    def action_set_accept(self):
+        for record in self:
+            if self._property_already_has_accepted_offer(record):
+                raise UserError('Another offer has already been accepted for this property.')
+
+            record.write({'status': 'accepted'})
+            record.property_id.write({'price': record.price, 'partner_id': record.partner_id.id})
+
+        return True
+
+    def action_set_reject(self):
+        for record in self:
+            record.write({'status': 'rejected'})
+
+        return True
+
+    def _property_already_has_accepted_offer(self, offer):
+        return any(status == 'accepted' for status in offer.property_id.offer_ids.mapped('status'))

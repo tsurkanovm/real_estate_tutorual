@@ -1,6 +1,6 @@
 from dateutil.relativedelta import relativedelta
-
 from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 class Property(models.Model):
     _name = 'ud_estate.property'
@@ -84,3 +84,26 @@ class Property(models.Model):
         else:
             self.garden_area = 0
             self.garden_orientation = False
+
+
+ # -------------------------------------------------------------------------
+    # ACTION METHODS
+# -------------------------------------------------------------------------
+    def action_set_sold(self):
+        for record in self:
+            if record.state == 'cancelled':
+                raise UserError(_('You cannot sell a cancelled property.'))
+            else:
+                #record.state = 'sold' - just populate field, required to save in form
+                # and if actions are can be used as API - needs to save here
+                record.write({'state': 'sold'})
+        return True
+
+    def action_set_cancelled(self):
+        for record in self:
+            if record.state == 'sold':
+                raise UserError(_('You cannot cancel a sold property.'))
+            else:
+                record.write({'state': 'cancelled'})
+
+        return True
