@@ -1,8 +1,10 @@
 docker compose down
 docker compose up -d
 
-
 docker compose logs -f web
 docker compose restart web
 docker compose exec web bash
 odoo -d odoof -u ud_estate --stop-after-init  # inside the container
+
+#restart and update module:
+docker compose run --rm web odoo -d odoof -u ud_estate --stop-after-init && docker compose restart web
