@@ -11,13 +11,14 @@
         <field name="name">ud_estate.property.list</field>
         <field name="model">ud_estate.property</field>
         <field name="arch" type="xml">
-            <list string="Properties">
+            <list string="Properties" default_order="price asc">
+                <field name="id"/>
                 <field name="name"/>
                 <field name="postcode"/>
                 <field name="bedrooms"/>
                 <field name="living_area" string="Living Area (sqm)"/>
                 <field name="price"/>
-                <field name="best_offer" string="Selling Price"/>
+                <field name="best_offer"/>
                 <field name="available_from"/>
             </list>
         </field>
@@ -31,18 +32,19 @@
                  <header>
                     <button name="action_set_sold" type="object" string="SOLD"/>
                     <button name="action_set_cancelled" type="object" string="CANCEL"/>
+                     <field name="state" widget="statusbar" statusbar_visible="new, received, accepted, sold"/>
                  </header>
                 <sheet>
                     <group>
                         <h1>
                             <field name="name"/>
                         </h1>
-                        <field name="tag_ids" widget="many2many_tags" string=""/>
+                        <field name="tag_ids" widget="many2many_tags" string="" options="{'color_field': 'color'}"/>
                     </group>
 
                     <group>
                         <group>
-                            <field name="state" string="Status"/>
+                            <field name="type_id" options="{'no_create': True}"/>
                             <field name="postcode"/>
                             <field name="available_from"/>
                         </group>
@@ -56,7 +58,6 @@
                             <page string="Description">
                                 <group>
                                     <field name="description"/>
-                                    <field name="type_id"/>
                                     <field name="bedrooms"/>
                                     <field name="living_area"/>
                                     <field name="facades"/>
@@ -109,6 +110,17 @@
         <field name="view_mode">list,form</field>
     </record>
 
+    <record id="ud_estate_property_type_tree" model="ir.ui.view">
+        <field name="name">ud_estate.property.type.tree</field>
+        <field name="model">ud_estate.property.type</field>
+        <field name="arch" type="xml">
+            <list string="Property Types">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
     <record id="ud_estate_property_type_form" model="ir.ui.view">
         <field name="name">ud_estate.property.type.form</field>
         <field name="model">ud_estate.property.type</field>
@@ -118,6 +130,17 @@
                     <h1 class="mb32">
                         <field name="name"/>
                     </h1>
+                    <notebook>
+                        <page string="Properties">
+                            <field name="property_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="expected_price"/>
+                                        <field name="state" string="Status"/>
+                                    </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

@@ -6,6 +6,7 @@ from odoo import api, fields, models, _
 class Property(models.Model):
     _name = 'ud_estate.property.offer'
     _description = 'Property Offers'
+    _order = 'price desc'
 
     price = fields.Float(string='Price')
     status = fields.Selection([('accepted', 'Accepted'), ('rejected', 'Rejected')], string='Status')
@@ -24,11 +25,6 @@ class Property(models.Model):
         'Price must be positive.',
     )
 
-    # @api.constrains('property_id.expected_price', 'price')
-    # def _check_description(self):
-    #     for record in self:
-    #         if record.property_id.expected_price <= record.price *0.9:
-    #             raise ValidationError(_("Selling price must be higher than 90% of expected price."))
 
     # -------------------------------------------------------------------------
     # COMPUTE AND INVERSE
@@ -52,6 +48,7 @@ class Property(models.Model):
     # -------------------------------------------------------------------------
     @api.onchange('status')
     def _onchange_status(self):
+        #todo - block to reject accepted offer
         if self.status == 'accepted':
             if self._property_already_has_accepted_offer(self):
                 raise UserError('Another offer has already been accepted for this property.')

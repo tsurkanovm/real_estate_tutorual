@@ -6,6 +6,7 @@ from odoo.tools import float_compare, float_is_zero
 class Property(models.Model):
     _name = 'ud_estate.property'
     _description = 'Real Estate Property'
+    _order = 'id desc' # order in a list will override _order
 
     name = fields.Char(string='Title', required=True)
     active = fields.Boolean(string='Active', default=True) # todo - delete?
