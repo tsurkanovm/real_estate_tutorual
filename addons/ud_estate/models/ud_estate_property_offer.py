@@ -63,7 +63,7 @@ class Property(models.Model):
                 raise UserError('Another offer has already been accepted for this property.')
 
             record.write({'status': 'accepted'})
-            record.property_id.write({'price': record.price, 'partner_id': record.partner_id.id})
+            record.property_id.write({'state': 'accepted', 'price': record.price, 'partner_id': record.partner_id.id})
 
         return True
 
