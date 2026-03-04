@@ -15,6 +15,7 @@ class Property(models.Model):
     validity = fields.Integer(string='Validity', default=7)
 
     #computed fields
+    property_type_id = fields.Many2one(related='property_id.type_id', store=True)
     date_deadline = fields.Datetime(string='Deadline',
                                     compute='_compute_date_deadline',
                                     inverse='_inverse_date_deadline')
