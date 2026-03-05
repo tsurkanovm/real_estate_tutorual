@@ -3,8 +3,8 @@
     'version': '1.0',
     'category': 'Sales',
     'description': """
-Module for practice Udemy and Tutorial course
-========================================
+        The Real Estate Ads module described in Odoo oficial documentation.
+        ========================================
     """,
     'application': True,
     'depends': ['base'],

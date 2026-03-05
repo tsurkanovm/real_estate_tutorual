@@ -127,8 +127,8 @@ class Property(models.Model):
 # -------------------------------------------------------------------------
     def action_set_sold(self):
         for record in self:
-            if record.state == 'cancelled':
-                raise UserError(_('You cannot sell a cancelled property.'))
+            if record.state == 'cancelled' or record.state == 'new':
+                raise UserError(_('You cannot sell a cancelled or new property.'))
             else:
                 #record.state = 'sold' - just populate field, required to save in form
                 # and if actions are can be used as API - needs to save here
