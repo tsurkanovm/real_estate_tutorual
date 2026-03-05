@@ -77,7 +77,7 @@
                                 </group>
                             </page>
                             <page string="Offers">
-                                <field name="offer_ids" widget="one2many" mode="list" readonly="state !='new'"/>
+                                <field name="offer_ids" widget="one2many" mode="list" readonly="state =='accepted' or state =='sold'"/>
                             </page>
                             <page string="Other information">
                                 <group>
