@@ -7,7 +7,7 @@ Module for practice Udemy and Tutorial course
 ========================================
     """,
     'application': True,
-    'depends': [],
+    'depends': ['base'],
     'data': [
         'data/ir.model.access.csv',
 
