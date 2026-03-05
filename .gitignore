@@ -4,6 +4,7 @@
 
 # Whitelist specific items
 !addons/
+!addons/**
 !commands
 !readme.md
 !docker-compose.yaml
@@ -11,8 +12,7 @@
 !docker_scripts/**
 
 
-# Make sure we keep the directory structure
-!*/
-/old_files/docker-compose.yaml
-
-src/*
+src/**
+.idea/**
+.venv/**
+.ai/**
