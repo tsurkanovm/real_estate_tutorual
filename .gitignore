@@ -5,13 +5,14 @@
 # Whitelist specific items
 !addons/
 !commands
+!readme.md
 !docker-compose.yaml
+!Dockerfile
+!docker_scripts/**
 
-# Ignore everything in addons except ud_estate
-addons/*
-!addons/ud_estate/
-!addons/ud_estate/**
 
 # Make sure we keep the directory structure
 !*/
 /old_files/docker-compose.yaml
+
+src/*

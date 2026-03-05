@@ -1,22 +1,13 @@
-#Odoo-docker-directory
-#├── addons
-#├── config
-#│   └── odoo.conf
-#├── docker-compose.yaml
-#├── odoo_pg_pass
-#└── sessions
-
-# Create a config file inside the config directory with the following content
-# [options]
-# addons_path = /mnt/extra-addons
-
-# docker-compose.yaml
 services:
   web:
-    image: odoo:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+
     depends_on:
-      - db
-    restart: always
+      db:
+        condition: service_healthy
+
     ports:
       - "8069:8069"
       - "8072:8072"
@@ -25,26 +16,44 @@ services:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
-    environment:
-      - PASSWORD_FILE=/run/secrets/postgresql_password
+      - ./docker_scripts:/opt/odoo-dev-scripts:ro
+
     secrets:
       - postgresql_password
-  db:
-    image: postgres:latest
+
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
-      - POSTGRES_USER=odoo
-      - PGDATA=/var/lib/postgresql/data/pgdata
-    restart: always
+      PASSWORD_FILE: /run/secrets/postgresql_password
+      PYCHARM_DEBUG: "1"
+      PYCHARM_DEBUG_WAIT: "0"
+      PYCHARM_DEBUG_HOST: "host.docker.internal"
+      PYCHARM_DEBUG_PORT: "8888"
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    entrypoint: [ "/opt/odoo-dev-scripts/start-odoo.sh" ]
+  db:
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgresql_password
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
     secrets:
       - postgresql_password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
 volumes:
   odoo-web-data:
   odoo-db-data:
-# Create a file named odoo_pg_pass in the same directory and enter your database password for odoo
+
 secrets:
   postgresql_password:
     file: odoo_pg_pass
