@@ -8,8 +8,8 @@
         <!--        <field name="context">{'search_default_available': True}</field> remove this default filter temporary -->
     </record>
 
-    <record id="ud_estate_property_list" model="ir.ui.view">
-        <field name="name">ud_estate.property.list</field>
+    <record id="ud_estate_property_view_list" model="ir.ui.view">
+        <field name="name">ud_estate.property.view.list</field>
         <field name="model">ud_estate.property</field>
         <field name="arch" type="xml">
             <list string="Properties" default_order="price asc"
@@ -30,8 +30,8 @@
         </field>
     </record>
 
-    <record id="ud_estate_property_form" model="ir.ui.view">
-        <field name="name">ud_estate.property.form</field>
+    <record id="ud_estate_property_view_form" model="ir.ui.view">
+        <field name="name">ud_estate.property.view.form</field>
         <field name="model">ud_estate.property</field>
         <field name="arch" type="xml">
             <form string="Property">
@@ -92,8 +92,8 @@
         </field>
     </record>
 
-<record id="ud_estate_property_kanban" model="ir.ui.view">
-    <field name="name">ud_estate.property.kanban</field>
+<record id="ud_estate_property_view_kanban" model="ir.ui.view">
+    <field name="name">ud_estate.property.view.kanban</field>
     <field name="model">ud_estate.property</field>
     <field name="arch" type="xml">
         <kanban default_group_by="type_id" class="o_kanban_example"
@@ -102,6 +102,8 @@
             <field name="state"/>
             <field name="expected_price"/>
             <field name="price"/>
+             <field name="best_offer"/>
+             <field name="tag_ids"/>
             <templates>
                 <t t-name="card">
                    <field name="description" class="fw-bolder"/>
@@ -125,8 +127,8 @@
     </field>
 </record>
 
-    <record id="ud_estate_property_filter" model="ir.ui.view">
-        <field name="name">ud_estate.property.filter</field>
+    <record id="ud_estate_property_view_filter" model="ir.ui.view">
+        <field name="name">ud_estate.property.view.filter</field>
         <field name="model">ud_estate.property</field>
         <field name="arch" type="xml">
             <search string="Properties">
@@ -152,7 +154,7 @@
         <field name="view_mode">list,form</field>
         <field name="domain">[('property_type_id', '=', active_id)]</field>
     </record>
-    <record id="ud_estate_property_offer_tree" model="ir.ui.view">
+    <record id="ud_estate_property_offer_view_tree" model="ir.ui.view">
         <field name="name">ud_estate.property.offer.tree</field>
         <field name="model">ud_estate.property.offer</field>
         <field name="arch" type="xml">
@@ -170,8 +172,8 @@
         </field>
     </record>
 
-    <record id="ud_estate_offer_form" model="ir.ui.view">
-        <field name="name">ud_estate.offer.form</field>
+    <record id="ud_estate_offer_view_form" model="ir.ui.view">
+        <field name="name">ud_estate.offer.view.form</field>
         <field name="model">ud_estate.property.offer</field>
         <field name="arch" type="xml">
             <form string="Offer">
@@ -195,8 +197,8 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <record id="ud_estate_property_type_tree" model="ir.ui.view">
-        <field name="name">ud_estate.property.type.tree</field>
+    <record id="ud_estate_property_type_view_tree" model="ir.ui.view">
+        <field name="name">ud_estate.property.type.view.tree</field>
         <field name="model">ud_estate.property.type</field>
         <field name="arch" type="xml">
             <list string="Property Types">
@@ -206,8 +208,8 @@
         </field>
     </record>
 
-    <record id="ud_estate_property_type_form" model="ir.ui.view">
-        <field name="name">ud_estate.property.type.form</field>
+    <record id="ud_estate_property_type_view_form" model="ir.ui.view">
+        <field name="name">ud_estate.property.type.view.form</field>
         <field name="model">ud_estate.property.type</field>
         <field name="arch" type="xml">
             <form string="Property">
