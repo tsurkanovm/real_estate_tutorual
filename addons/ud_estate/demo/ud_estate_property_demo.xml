@@ -1,0 +1,60 @@
+<odoo>
+    <!--  Properties -->
+    <record id="demo_big_villa_ud_estate_property" model="ud_estate.property">
+        <field name="name">Big Villa</field>
+        <field name="state">new</field>
+        <field name="postcode">12345</field>
+        <field name="available_from">2020-02-02</field>
+        <field name="expected_price">1600000</field>
+        <field name="price">0</field>
+        <field name="bedrooms">6</field>
+        <field name="living_area">100</field>
+        <field name="facades">4</field>
+        <field name="garage">1</field>
+        <field name="garden">1</field>
+        <field name="garden_area">10000</field>
+        <field name="garden_orientation">south</field>
+
+        <field name="type_id" ref="ud_estate_property_type_residential"/>
+    </record>
+    <record id="demo_trailer_home_ud_estate_property" model="ud_estate.property">
+        <field name="name">Trailer home</field>
+        <field name="state">cancelled</field>
+        <field name="postcode">54321</field>
+        <field name="available_from">1970-01-01</field>
+        <field name="expected_price">100000</field>
+        <field name="price">120000</field>
+        <field name="bedrooms">1</field>
+        <field name="living_area">10</field>
+        <field name="facades">4</field>
+        <field name="garage">0</field>
+
+        <field name="type_id" ref="ud_estate_property_type_residential"/>
+    </record>
+
+    <!-- Offers -->
+    <record id="demo_villa_azure1_ud_estate_property_offer" model="ud_estate.property.offer">
+        <field name="price">10000</field>
+        <field name="validity">14</field>
+
+        <field name="partner_id" ref="base.res_partner_12"/>
+        <field name="property_id" ref="demo_big_villa_ud_estate_property"/>
+        <field name="property_type_id" ref="ud_estate_property_type_residential"/>
+    </record>
+    <record id="demo_villa_azure2_ud_estate_property_offer" model="ud_estate.property.offer">
+        <field name="price">1500000</field>
+        <field name="validity">14</field>
+
+        <field name="partner_id" ref="base.res_partner_12"/>
+        <field name="property_id" ref="demo_big_villa_ud_estate_property"/>
+        <field name="property_type_id" ref="ud_estate_property_type_residential"/>
+    </record>
+    <record id="demo_villa_deco_ud_estate_property_offer" model="ud_estate.property.offer">
+        <field name="price">1500001</field>
+        <field name="validity">14</field>
+
+        <field name="partner_id" ref="base.res_partner_18"/>
+        <field name="property_id" ref="demo_big_villa_ud_estate_property"/>
+        <field name="property_type_id" ref="ud_estate_property_type_residential"/>
+    </record>
+</odoo>

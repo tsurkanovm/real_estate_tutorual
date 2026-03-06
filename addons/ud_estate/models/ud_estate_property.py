@@ -48,7 +48,7 @@ class Property(models.Model):
 
     #constraints
     _check_price_positive = models.Constraint(
-        'CHECK(price > 0)',
+        'CHECK(price >= 0)',
         'Price must be positive.',
     )
     _check_expected_price_positive = models.Constraint(
