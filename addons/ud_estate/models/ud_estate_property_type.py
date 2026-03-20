@@ -1,7 +1,7 @@
 
 from odoo import fields, models, api
 
-class Property(models.Model):
+class PropertyType(models.Model):
     _name = 'ud_estate.property.type'
     _description = 'Property Types'
     _order = 'sequence, name'

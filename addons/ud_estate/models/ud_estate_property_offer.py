@@ -3,7 +3,7 @@ from datetime import datetime
 from odoo.exceptions import UserError, ValidationError
 from odoo import api, fields, models, _
 
-class Property(models.Model):
+class PropertyOffer(models.Model):
     _name = 'ud_estate.property.offer'
     _description = 'Property Offers'
     _order = 'price desc'
