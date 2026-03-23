@@ -276,9 +276,9 @@
 
 <!--    Dashboard views -->
     <record id="ud_estate_dashboard_action" model="ir.actions.act_window">
-        <field name="name">Property Types</field>
-        <field name="res_model">ud_estate.property.type</field>
-        <field name="view_mode">list,form</field>
+        <field name="name">Dashboard</field>
+        <field name="res_model">ud_estate.dashboard</field>
+        <field name="view_mode">form</field>
         <field name="res_id" ref="ud_estate_dashboard_main"/>
     </record>
     <record id="ud_estate_dashboard_form_view" model="ir.ui.view">
@@ -287,31 +287,131 @@
         <field name="arch" type="xml">
             <form string="Real Estate Dashboard" create="false" edit="false" delete="false">
                 <sheet>
-                    <group string="Overview" col="4">
-                        <field name="total_properties" readonly="1"/>
-                        <field name="sold_properties" readonly="1"/>
-                        <field name="total_offers" readonly="1"/>
-                        <field name="accepted_offers" readonly="1"/>
-                    </group>
 
-                    <group string="Property Pipeline" col="5">
-                        <field name="new_properties" readonly="1"/>
-                        <field name="received_properties" readonly="1"/>
-                        <field name="accepted_properties" readonly="1"/>
-                        <field name="sold_properties" readonly="1"/>
-                        <field name="cancelled_properties" readonly="1"/>
-                    </group>
+                    <!-- OVERVIEW -->
+                    <div class="mb-4">
+                        <h2>Overview</h2>
+                        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px;">
+                            <div style="flex: 1 1 220px; min-width: 220px; background: #71639e; color: white; border-radius: 8px; padding: 20px; text-align: center;">
+                                <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Total Properties
+                                </div>
+                                <div style="font-size: 28px; font-weight: 700;">
+                                    <field name="total_properties" readonly="1" nolabel="1"/>
+                                </div>
+                            </div>
 
-                    <group string="Prices" col="2">
-                        <field name="avg_expected_price" readonly="1"/>
-                        <field name="avg_selling_price" readonly="1"/>
-                    </group>
+                            <div style="flex: 1 1 220px; min-width: 220px; background: #28a745; color: white; border-radius: 8px; padding: 20px; text-align: center;">
+                                <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Sold Properties
+                                </div>
+                                <div style="font-size: 28px; font-weight: 700;">
+                                    <field name="sold_properties" readonly="1" nolabel="1"/>
+                                </div>
+                            </div>
 
-                    <footer>
-                        <button name="action_open_sold_properties" type="object" string="Sold Properties"
-                                class="btn-primary"/>
-                        <button name="action_open_rejected_offers" type="object" string="Rejected Offers"/>
-                    </footer>
+                            <div style="flex: 1 1 220px; min-width: 220px; background: #17a2b8; color: white; border-radius: 8px; padding: 20px; text-align: center;">
+                                <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Total Offers</div>
+                                <div style="font-size: 28px; font-weight: 700;">
+                                    <field name="total_offers" readonly="1" nolabel="1"/>
+                                </div>
+                            </div>
+
+                            <div style="flex: 1 1 220px; min-width: 220px; background: #f0ad4e; color: white; border-radius: 8px; padding: 20px; text-align: center;">
+                                <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Accepted Offers
+                                </div>
+                                <div style="font-size: 28px; font-weight: 700;">
+                                    <field name="accepted_offers" readonly="1" nolabel="1"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIPELINE -->
+                    <h2>Property Pipeline</h2>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px;">
+                        <div style="flex: 1 1 220px; min-width: 220px; background: #6c757d; color: white; border-radius: 8px; padding: 20px; text-align: center;">
+                            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">New Properties</div>
+                            <div style="font-size: 28px; font-weight: 700;">
+                                <field name="new_properties" readonly="1" nolabel="1"/>
+                            </div>
+                        </div>
+
+                        <div style="flex: 1 1 220px; min-width: 220px; background: #17a2b8; color: white; border-radius: 8px; padding: 20px; text-align: center;">
+                            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Received Properties
+                            </div>
+                            <div style="font-size: 28px; font-weight: 700;">
+                                <field name="received_properties" readonly="1" nolabel="1"/>
+                            </div>
+                        </div>
+
+                        <div style="flex: 1 1 220px; min-width: 220px; background: #f0ad4e; color: white; border-radius: 8px; padding: 20px; text-align: center;">
+                            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Accepted Properties
+                            </div>
+                            <div style="font-size: 28px; font-weight: 700;">
+                                <field name="accepted_properties" readonly="1" nolabel="1"/>
+                            </div>
+                        </div>
+
+                        <div style="flex: 1 1 220px; min-width: 220px; background: #28a745; color: white; border-radius: 8px; padding: 20px; text-align: center;">
+                            <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Sold Properties</div>
+                            <div style="font-size: 28px; font-weight: 700;">
+                                <field name="sold_properties" readonly="1" nolabel="1"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PRICES -->
+<div class="mt-4">
+    <h2>Prices</h2>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px;">
+        <div style="flex: 1 1 320px; min-width: 320px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px;">
+            <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #212529;">
+                Avg Expected Price
+            </div>
+            <div style="font-size: 28px; font-weight: 700; color: #212529;">
+                <field name="currency_id" invisible="1"/>
+                <field name="avg_expected_price"
+                       readonly="1"
+                       nolabel="1"
+                       widget="monetary"
+                       options="{'currency_field': 'currency_id'}"/>
+            </div>
+        </div>
+
+        <div style="flex: 1 1 320px; min-width: 320px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px;">
+            <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #212529;">
+                Avg Selling Price
+            </div>
+            <div style="font-size: 28px; font-weight: 700; color: #212529;">
+                <field name="avg_selling_price"
+                       readonly="1"
+                       nolabel="1"
+                       widget="monetary"
+                       options="{'currency_field': 'currency_id'}"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ACTIONS -->
+<div class="mt-4">
+    <h2>Actions</h2>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; align-items: flex-start;">
+        <button name="action_open_sold_properties"
+                type="object"
+                string="Open Sold Properties"
+                class="btn btn-primary"
+                icon="fa-money"
+                style="padding: 12px 24px; min-width: 220px;"/>
+
+        <button name="action_open_rejected_offers"
+                type="object"
+                string="Open Rejected Offers"
+                class="btn btn-primary"
+                icon="fa-ban"
+                style="padding: 12px 24px; min-width: 220px;"/>
+    </div>
+</div>
+
                 </sheet>
             </form>
         </field>

@@ -17,8 +17,33 @@ class EstateDashboard(models.Model):
     accepted_offers = fields.Integer(compute='_compute_metrics')
     rejected_offers = fields.Integer(compute='_compute_metrics')
 
-    avg_expected_price = fields.Float(compute='_compute_metrics')
-    avg_selling_price = fields.Float(compute='_compute_metrics')
+    company_id = fields.Many2one(
+        'res.company',
+        string='Company',
+        default=lambda self: self.env.company,
+        readonly=True,
+    )
+
+    currency_id = fields.Many2one(
+        'res.currency',
+        related='company_id.currency_id',
+        string='Currency',
+        readonly=True,
+    )
+
+    avg_expected_price = fields.Monetary(
+        string='Avg Expected Price',
+        currency_field='currency_id',
+        compute='_compute_metrics',
+        readonly=True,
+    )
+
+    avg_selling_price = fields.Monetary(
+        string='Avg Selling Price',
+        currency_field='currency_id',
+        compute='_compute_metrics',
+        readonly=True,
+    )
 
     @api.depends()
     def _compute_metrics(self):

@@ -9,7 +9,7 @@ class Property(models.Model):
     _order = 'id desc' # order in a list will override _order
 
     name = fields.Char(string='Title', required=True)
-    active = fields.Boolean(string='Active', default=True) # todo - delete?
+    active = fields.Boolean(string='Active', default=True)
 
     state = fields.Selection(
         [('new', 'New'), ('received', 'Offer Received'), ('accepted', 'Offer Accepted'), ('sold', 'Sold'), ('cancelled', 'Cancelled')],
