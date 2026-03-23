@@ -1,0 +1,5 @@
+<odoo>
+    <record id="ud_estate_dashboard_main" model="ud_estate.dashboard">
+        <field name="name">Main Dashboard</field>
+    </record>
+</odoo>

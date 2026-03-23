@@ -5,7 +5,6 @@
         <field name="name">Properties</field>
         <field name="res_model">ud_estate.property</field>
         <field name="view_mode">list,form,kanban</field>
-        <!--        <field name="context">{'search_default_available': True}</field> remove this default filter temporary -->
     </record>
 
     <record id="ud_estate_property_view_list" model="ir.ui.view">
@@ -272,6 +271,49 @@
                 </field>
             </page>
         </xpath>
+        </field>
+    </record>
+
+<!--    Dashboard views -->
+    <record id="ud_estate_dashboard_action" model="ir.actions.act_window">
+        <field name="name">Property Types</field>
+        <field name="res_model">ud_estate.property.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="res_id" ref="ud_estate_dashboard_main"/>
+    </record>
+    <record id="ud_estate_dashboard_form_view" model="ir.ui.view">
+        <field name="name">ud.estate.dashboard.form</field>
+        <field name="model">ud_estate.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Real Estate Dashboard" create="false" edit="false" delete="false">
+                <sheet>
+                    <group string="Overview" col="4">
+                        <field name="total_properties" readonly="1"/>
+                        <field name="sold_properties" readonly="1"/>
+                        <field name="total_offers" readonly="1"/>
+                        <field name="accepted_offers" readonly="1"/>
+                    </group>
+
+                    <group string="Property Pipeline" col="5">
+                        <field name="new_properties" readonly="1"/>
+                        <field name="received_properties" readonly="1"/>
+                        <field name="accepted_properties" readonly="1"/>
+                        <field name="sold_properties" readonly="1"/>
+                        <field name="cancelled_properties" readonly="1"/>
+                    </group>
+
+                    <group string="Prices" col="2">
+                        <field name="avg_expected_price" readonly="1"/>
+                        <field name="avg_selling_price" readonly="1"/>
+                    </group>
+
+                    <footer>
+                        <button name="action_open_sold_properties" type="object" string="Sold Properties"
+                                class="btn-primary"/>
+                        <button name="action_open_rejected_offers" type="object" string="Rejected Offers"/>
+                    </footer>
+                </sheet>
+            </form>
         </field>
     </record>
 </odoo>
