@@ -1,0 +1,636 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ud_estate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260217\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 14:08+0000\n"
+"PO-Revision-Date: 2026-03-23 14:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_type_view_form
+msgid "<span class=\"o_stat_text\">Offers</span>"
+msgstr "<span class=\"o_stat_text\">Пропозиції</span>"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_offer_view_tree
+msgid "Accept Offer"
+msgstr "Прийняти пропозицію"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property_offer__status__accepted
+msgid "Accepted"
+msgstr "Прийнято"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__accepted_offers
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Accepted Offers"
+msgstr "Прийняті пропозиції"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__accepted_properties
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Accepted Properties"
+msgstr "Прийнята нерухомість"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Actions"
+msgstr "Дії"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__active
+msgid "Active"
+msgstr "Активний"
+
+#. module: ud_estate
+#: model:ir.ui.menu,name:ud_estate.estate_ads_menu
+msgid "Advertisements"
+msgstr "Оголошення"
+
+#. module: ud_estate
+#: model:res.groups,name:ud_estate.estate_group_user
+msgid "Agent"
+msgstr "Агент"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_filter
+msgid "Available"
+msgstr "Доступно"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__available_from
+msgid "Available From"
+msgstr "Доступно з"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__avg_expected_price
+msgid "Avg Expected Price"
+msgstr "Сер. очікувана ціна"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__avg_selling_price
+msgid "Avg Selling Price"
+msgstr "Сер. ціна продажу"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__partner_id
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__partner_id
+msgid "Bayer"
+msgstr "Покупець"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__bedrooms
+msgid "Bedrooms"
+msgstr "Спальні"
+
+#. module: ud_estate
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_check_bedrooms_positive
+msgid "Bedrooms must be positive."
+msgstr "Кількість спалень має бути додатною."
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__best_offer
+msgid "Best Offer"
+msgstr "Найкраща пропозиція"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_kanban
+msgid "Best Offer:"
+msgstr "Найкраща пропозиція:"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_form
+msgid "CANCEL"
+msgstr "СКАСУВАТИ"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__state__cancelled
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__cancelled_properties
+msgid "Cancelled Properties"
+msgstr "Скасована нерухомість"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_tag__color
+msgid "Color"
+msgstr "Колір"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__create_uid
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__create_uid
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__create_uid
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_tag__create_uid
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__create_uid
+msgid "Created by"
+msgstr "Створив"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__create_date
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__create_date
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__create_date
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_tag__create_date
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: ud_estate
+#: model:ir.actions.act_window,name:ud_estate.ud_estate_dashboard_action
+#: model:ir.ui.menu,name:ud_estate.ud_estate_dashboard_model_menu_action
+msgid "Dashboard"
+msgstr "Панель"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__date_deadline
+msgid "Deadline"
+msgstr "Кінцевий термін"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_form
+msgid "Description"
+msgstr "Опис"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_res_users__display_name
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__display_name
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__display_name
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__display_name
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_tag__display_name
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__garden_orientation__east
+msgid "East"
+msgstr "Схід"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__expected_price
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_filter
+msgid "Expected Price"
+msgstr "Очікувана ціна"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_kanban
+msgid "Expected Price:"
+msgstr "Очікувана ціна:"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__facades
+msgid "Facades"
+msgstr "Фасади"
+
+#. module: ud_estate
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_check_facades_positive
+msgid "Facades must be positive."
+msgstr "Кількість фасадів має бути додатною."
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__garage
+msgid "Garage"
+msgstr "Гараж"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__garden
+msgid "Garden"
+msgstr "Сад"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__garden_area
+msgid "Garden Area"
+msgstr "Площа саду"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__garden_orientation
+msgid "Garden Orientation"
+msgstr "Орієнтація саду"
+
+#. module: ud_estate
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_check_garden_area_positive
+msgid "Garden area must be positive."
+msgstr "Площа саду має бути додатною."
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_res_users__id
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__id
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__id
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__id
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_tag__id
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__write_uid
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__write_uid
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__write_uid
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_tag__write_uid
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__write_uid
+msgid "Last Updated by"
+msgstr "Останнє оновлення виконав"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__write_date
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__write_date
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__write_date
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_tag__write_date
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__write_date
+msgid "Last Updated on"
+msgstr "Останнє оновлення"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__living_area
+msgid "Living Area"
+msgstr "Житлова площа"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_filter
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_list
+msgid "Living Area (sqm)"
+msgstr "Житлова площа (кв. м)"
+
+#. module: ud_estate
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_check_living_area_positive
+msgid "Living area must be positive."
+msgstr "Житлова площа має бути додатною."
+
+#. module: ud_estate
+#: model:res.groups,name:ud_estate.estate_group_manager
+msgid "Manager"
+msgstr "Менеджер"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__name
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_tag__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__state__new
+msgid "New"
+msgstr "Нове"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__new_properties
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "New Properties"
+msgstr "Нові об’єкти"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__garden_orientation__north
+msgid "North"
+msgstr "Північ"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_offer_view_form
+msgid "Offer"
+msgstr "Пропозиція"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__state__accepted
+msgid "Offer Accepted"
+msgstr "Пропозицію прийнято"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__offer_count
+msgid "Offer Count"
+msgstr "Кількість пропозицій"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__state__received
+msgid "Offer Received"
+msgstr "Пропозицію отримано"
+
+#. module: ud_estate
+#. odoo-python
+#: code:addons/ud_estate/models/ud_estate_property_offer.py:0
+msgid "Offer price must be higher than the current offer price."
+msgstr "Ціна пропозиції має бути вищою за поточну ціну пропозиції."
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__offer_ids
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_offer_view_tree
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_form
+msgid "Offers"
+msgstr "Пропозиції"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_type_view_form
+msgid "Offers for a type of property"
+msgstr "Пропозиції для цього типу нерухомості"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Open Rejected Offers"
+msgstr "Відкрити відхилені пропозиції"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Open Sold Properties"
+msgstr "Відкрити продані об’єкти"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_form
+msgid "Other information"
+msgstr "Інша інформація"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Overview"
+msgstr "Огляд"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__postcode
+msgid "Postcode"
+msgstr "Поштовий індекс"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__price
+msgid "Price"
+msgstr "Ціна"
+
+#. module: ud_estate
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_check_expected_price_positive
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_check_price_positive
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_offer_check_price_positive
+msgid "Price must be positive."
+msgstr "Ціна має бути додатною."
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Prices"
+msgstr "Ціни"
+
+#. module: ud_estate
+#: model:ir.actions.act_window,name:ud_estate.ud_estate_property_action
+#: model:ir.model.fields,field_description:ud_estate.field_res_users__property_ids
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__property_ids
+#: model:ir.ui.menu,name:ud_estate.ud_estate_property_model_menu_action
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_type_view_form
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_filter
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_list
+msgid "Properties"
+msgstr "Нерухомість"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__property_id
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_type_view_form
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_form
+msgid "Property"
+msgstr "Об’єкт нерухомості"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__description
+msgid "Property Description"
+msgstr "Опис об’єкта нерухомості"
+
+#. module: ud_estate
+#: model:ir.actions.act_window,name:ud_estate.ud_estate_property_offer_action
+#: model:ir.model,name:ud_estate.model_ud_estate_property_offer
+msgid "Property Offers"
+msgstr "Пропозиції щодо нерухомості"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Property Pipeline"
+msgstr "Воронка нерухомості"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__state
+msgid "Property State"
+msgstr "Стан об’єкта"
+
+#. module: ud_estate
+#: model:ir.actions.act_window,name:ud_estate.ud_estate_property_tag_action
+#: model:ir.model,name:ud_estate.model_ud_estate_property_tag
+#: model:ir.ui.menu,name:ud_estate.ud_estate_property_tag_model_menu_action
+msgid "Property Tags"
+msgstr "Теги нерухомості"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__type_id
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__property_type_id
+msgid "Property Type"
+msgstr "Тип нерухомості"
+
+#. module: ud_estate
+#: model:ir.actions.act_window,name:ud_estate.ud_estate_property_type_action
+#: model:ir.model,name:ud_estate.model_ud_estate_property_type
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__property_offer_ids
+#: model:ir.ui.menu,name:ud_estate.ud_estate_property_type_model_menu_action
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_type_view_tree
+msgid "Property Types"
+msgstr "Типи нерухомості"
+
+#. module: ud_estate
+#: model:ir.ui.menu,name:ud_estate.estate_menu_root
+#: model:res.groups.privilege,name:ud_estate.groups_privilege_real_estate
+msgid "Real Estate"
+msgstr "Нерухомість"
+
+#. module: ud_estate
+#: model:ir.model,name:ud_estate.model_ud_estate_dashboard
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Real Estate Dashboard"
+msgstr "Панель нерухомості"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.res_users_view_form
+msgid "Real Estate Properties"
+msgstr "Об’єкти нерухомості"
+
+#. module: ud_estate
+#: model:ir.model,name:ud_estate.model_ud_estate_property
+msgid "Real Estate Property"
+msgstr "Об’єкт нерухомості"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__received_properties
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Received Properties"
+msgstr "Отримані об’єкти"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_offer_view_tree
+msgid "Reject Offer"
+msgstr "Відхилити пропозицію"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property_offer__status__rejected
+msgid "Rejected"
+msgstr "Відхилено"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__rejected_offers
+msgid "Rejected Offers"
+msgstr "Відхилені пропозиції"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_form
+msgid "SOLD"
+msgstr "ПРОДАНО"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__user_id
+msgid "Salesman"
+msgstr "Агент"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__price
+msgid "Selling Price"
+msgstr "Ціна продажу"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_view_kanban
+msgid "Selling Price:"
+msgstr "Ціна продажу:"
+
+#. module: ud_estate
+#. odoo-python
+#: code:addons/ud_estate/models/ud_estate_property.py:0
+msgid "Selling price must be higher than 90% of expected price."
+msgstr "Ціна продажу має бути вищою за 90% очікуваної ціни."
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__sequence
+msgid "Sequence"
+msgstr "Послідовність"
+
+#. module: ud_estate
+#: model:ir.ui.menu,name:ud_estate.estate_setting_menu
+msgid "Settings"
+msgstr "Налаштування"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__state__sold
+msgid "Sold"
+msgstr "Продано"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__sold_properties
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Sold Properties"
+msgstr "Продані об’єкти"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__garden_orientation__south
+msgid "South"
+msgstr "Південь"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__status
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_type_view_form
+msgid "Status"
+msgstr "Статус"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__tag_ids
+msgid "Tags"
+msgstr "Теги"
+
+#. module: ud_estate
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_tag_name_uniq
+msgid "The name of tag must be unique!"
+msgstr "Назва тега має бути унікальною!"
+
+#. module: ud_estate
+#: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_type_name_uniq
+msgid "The name of type must be unique!"
+msgstr "Назва типу має бути унікальною!"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__name
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_type__name
+msgid "Title"
+msgstr "Назва"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property__total_area
+msgid "Total Area"
+msgstr "Загальна площа"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__total_offers
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Total Offers"
+msgstr "Усього пропозицій"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_dashboard__total_properties
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_dashboard_form_view
+msgid "Total Properties"
+msgstr "Усього об’єктів"
+
+#. module: ud_estate
+#: model:ir.model,name:ud_estate.model_res_users
+msgid "User"
+msgstr "Користувач"
+
+#. module: ud_estate
+#: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__validity
+msgid "Validity"
+msgstr "Термін дії"
+
+#. module: ud_estate
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_offer_view_form
+#: model_terms:ir.ui.view,arch_db:ud_estate.ud_estate_property_offer_view_tree
+msgid "Validity (days)"
+msgstr "Термін дії (днів)"
+
+#. module: ud_estate
+#. odoo-python
+#: code:addons/ud_estate/models/ud_estate_property.py:0
+msgid "Warning"
+msgstr "Попередження"
+
+#. module: ud_estate
+#: model:ir.model.fields.selection,name:ud_estate.selection__ud_estate_property__garden_orientation__west
+msgid "West"
+msgstr "Захід"
+
+#. module: ud_estate
+#. odoo-python
+#: code:addons/ud_estate/models/ud_estate_property.py:0
+msgid "You are change existing property. Default values will not be set."
+msgstr "Ви змінюєте існуючий об’єкт. Значення за замовчуванням не буде встановлено."
+
+#. module: ud_estate
+#. odoo-python
+#: code:addons/ud_estate/models/ud_estate_property.py:0
+msgid "You can delete only new or cancelled property."
+msgstr "Ви можете видалити лише новий або скасований об’єкт."
+
+#. module: ud_estate
+#. odoo-python
+#: code:addons/ud_estate/models/ud_estate_property.py:0
+msgid "You cannot cancel a sold property."
+msgstr "Ви не можете скасувати проданий об’єкт."
+
+#. module: ud_estate
+#. odoo-python
+#: code:addons/ud_estate/models/ud_estate_property.py:0
+msgid "You cannot sell a cancelled or new property."
+msgstr "Ви не можете продати скасований або новий об’єкт."
