@@ -1,15 +1,16 @@
 {
     'name': 'Real Estate Ads',
     'version': '1.0',
-    'category': 'Sales',
+    'category': 'Real Estate/Brokerage',
     'description': """
-        The Real Estate Ads module described in Odoo oficial documentation.
+        The Real Estate Ads module described in Odoo tutorial.
         ========================================
     """,
     'application': True,
     'depends': ['base'],
     'data': [
-        'data/ir.model.access.csv',
+        'security/ud_security.xml',
+        'security/ir.model.access.csv',
         'data/ud_estate_property_type_data.xml',
 
         'views/ud_estate_property_views.xml',
