@@ -52,7 +52,7 @@ class PropertyOffer(models.Model):
         #todo - block to reject accepted offer
         if self.status == 'accepted':
             if self._property_already_has_accepted_offer(self):
-                raise UserError('Another offer has already been accepted for this property.')
+                raise UserError(_('Another offer has already been accepted for this property.'))
 
 
     # -------------------------------------------------------------------------
@@ -61,7 +61,7 @@ class PropertyOffer(models.Model):
     def action_set_accept(self):
         for record in self:
             if self._property_already_has_accepted_offer(record):
-                raise UserError('Another offer has already been accepted for this property.')
+                raise UserError(_('Another offer has already been accepted for this property.'))
 
             record.write({'status': 'accepted'})
             record.property_id.write({'state': 'accepted', 'price': record.price, 'partner_id': record.partner_id.id})

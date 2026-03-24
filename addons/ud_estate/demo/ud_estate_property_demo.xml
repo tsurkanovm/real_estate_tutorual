@@ -16,6 +16,7 @@
         <field name="garden_orientation">south</field>
 
         <field name="type_id" ref="ud_estate_property_type_residential"/>
+        <field name="user_id" ref="base.user_demo"/>
     </record>
     <record id="demo_trailer_home_ud_estate_property" model="ud_estate.property">
         <field name="name">Trailer home</field>
@@ -30,6 +31,7 @@
         <field name="garage">0</field>
 
         <field name="type_id" ref="ud_estate_property_type_residential"/>
+        <field name="user_id" ref="base.user_demo"/>
     </record>
 
     <!-- Offers -->

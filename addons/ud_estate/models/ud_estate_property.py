@@ -8,7 +8,6 @@ class Property(models.Model):
     _description = 'Real Estate Property'
     _order = 'id desc' # order in a list will override _order
 
-    name = fields.Char(string='Title', required=True)
     active = fields.Boolean(string='Active', default=True)
 
     state = fields.Selection(
@@ -43,7 +42,7 @@ class Property(models.Model):
 
     # computed fields
     total_area = fields.Integer(string='Total Area', compute='_compute_total_area')
-    description = fields.Text(string='Property Description', compute='_compute_description', store=True)
+    name = fields.Text(string='Property Description', compute='_compute_name', store=True)
     best_offer = fields.Float(string='Best Offer', copy=False, compute='_compute_best_offer')
 
     #constraints
@@ -86,11 +85,19 @@ class Property(models.Model):
         for property in self:
             property.total_area = property.living_area + property.garden_area
 
-    @api.depends('type_id.name', 'partner_id.name', 'total_area')
-    def _compute_description(self):
+    @api.depends('type_id.name', 'expected_price', 'total_area')
+    def _compute_name(self):
         for property in self:
-            property.description \
-                = f"{property.type_id.name} for {property.partner_id.name} with total area {property.total_area} sqm"
+            if property.type_id and property.total_area and property.expected_price:
+                property.name = _(
+                    "%(type)s with total area %(area)s sqm and expected price %(price)s %(currency)s",
+                    type=property.type_id.name,
+                    area=property.total_area,
+                    price=property.expected_price,
+                    currency=property.env.company.currency_id.name
+                )
+            else:
+                property.name = _('New Property')
 
 
     @api.depends('offer_ids.price')

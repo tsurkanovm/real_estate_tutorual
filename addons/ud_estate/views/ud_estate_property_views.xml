@@ -43,10 +43,7 @@
                 </header>
                 <sheet>
                     <group>
-                        <h1>
-                            <field name="name"/>
-                        </h1>
-                        <field name="tag_ids" widget="many2many_tags" string="" options="{'color_field': 'color'}"/>
+                        <field name="tag_ids" widget="many2many_tags" string="Property Tags" options="{'color_field': 'color'}"/>
                     </group>
 
                     <group>
@@ -64,7 +61,7 @@
                         <notebook>
                             <page string="Description">
                                 <group>
-                                    <field name="description"/>
+                                    <field name="name"/>
                                     <field name="bedrooms"/>
                                     <field name="living_area"/>
                                     <field name="facades"/>
@@ -97,7 +94,7 @@
     <field name="arch" type="xml">
         <kanban default_group_by="type_id" class="o_kanban_example"
         group_create="false" group_edit="false" group_delete="false" records_draggable="false" default_order="price desc">
-            <field name="description"/>
+            <field name="name"/>
             <field name="state"/>
             <field name="expected_price"/>
             <field name="price"/>
@@ -105,7 +102,7 @@
              <field name="tag_ids"/>
             <templates>
                 <t t-name="card">
-                   <field name="description" class="fw-bolder"/>
+                   <field name="name" class="fw-bolder"/>
                     <div>
                         Expected Price:
                          <field name="expected_price"/>
