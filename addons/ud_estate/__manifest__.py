@@ -12,6 +12,7 @@
         'security/ud_security.xml',
         'security/ir.model.access.csv',
         'data/ud_estate_property_type_data.xml',
+        'data/ud_estate_property_tag_data.xml',
         'data/ud_estate_dashboard_data.xml',
 
         'views/ud_estate_property_views.xml',

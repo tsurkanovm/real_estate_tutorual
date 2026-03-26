@@ -6,7 +6,7 @@
         The Real Estate Acoounting module described in Odoo oficial documentation.
         ========================================
     """,
-    'application': True,
+    'application': False,
     'depends': [
         'ud_estate',
         'account',

@@ -57,6 +57,35 @@ msgid "Land"
 msgstr "Земля"
 
 # =========================
+# Property Tags (data XML)
+# =========================
+
+#. module: ud_estate
+#: model:ud_estate.property.tag,name:ud_estate.ud_estate_property_tag_new_build
+msgid "New Build"
+msgstr "Новобудова"
+
+#. module: ud_estate
+#: model:ud_estate.property.tag,name:ud_estate.ud_estate_property_tag_renovated
+msgid "Renovated"
+msgstr "З ремонтом"
+
+#. module: ud_estate
+#: model:ud_estate.property.tag,name:ud_estate.ud_estate_property_tag_sea_view
+msgid "Sea View"
+msgstr "Вид на море"
+
+#. module: ud_estate
+#: model:ud_estate.property.tag,name:ud_estate.ud_estate_property_tag_city_centre
+msgid "City Centre"
+msgstr "Центр міста"
+
+#. module: ud_estate
+#: model:ud_estate.property.tag,name:ud_estate.ud_estate_property_tag_urgent_sale
+msgid "Urgent Sale"
+msgstr "Терміновий продаж"
+
+# =========================
 # Properties (demo XML)
 # =========================
 
@@ -69,6 +98,16 @@ msgstr "Велика вілла"
 #: model:ud_estate.property,name:ud_estate.demo_trailer_home_ud_estate_property
 msgid "Trailer home"
 msgstr "Будинок на колесах"
+
+#. module: ud_estate
+#: model:ud_estate.property,name:ud_estate.demo_city_office_ud_estate_property
+msgid "City Centre Office"
+msgstr "Офіс у центрі міста"
+
+#. module: ud_estate
+#: model:ud_estate.property,name:ud_estate.demo_suburban_land_ud_estate_property
+msgid "Suburban Land Plot"
+msgstr "Земельна ділянка в передмісті"
 
 #. module: ud_estate
 #. odoo-python
