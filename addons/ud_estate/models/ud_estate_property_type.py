@@ -14,10 +14,9 @@ class PropertyType(models.Model):
     # computed fields
     offer_count = fields.Integer(string='Offer Count', compute='_compute_offer_count')
 
-    _name_uniq = models.Constraint(
-        'unique(name)',
-        'The name of type must be unique!',
-    )
+    _sql_constraints = [
+        ('name_uniq', 'unique(name)', 'The name of type must be unique!'),
+    ]
 
  # -------------------------------------------------------------------------
  # COMPUTE

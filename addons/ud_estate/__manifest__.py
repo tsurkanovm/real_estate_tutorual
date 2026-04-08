@@ -1,6 +1,6 @@
 {
     'name': 'Real Estate Ads',
-    'version': '1.0',
+    'version': '18.0.1.0.0',
     'category': 'Real Estate/Brokerage',
     'description': """
         The Real Estate Ads module.

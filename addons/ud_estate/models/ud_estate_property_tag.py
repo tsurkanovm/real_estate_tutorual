@@ -9,8 +9,7 @@ class Property(models.Model):
     name = fields.Char(string='Name',  required=True)
     color = fields.Integer(string='Color')
 
-    _name_uniq = models.Constraint(
-        'unique(name)',
-        'The name of tag must be unique!',
-    )
+    _sql_constraints = [
+        ('name_uniq', 'unique(name)', 'The name of tag must be unique!'),
+    ]
 

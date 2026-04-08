@@ -21,10 +21,9 @@ class PropertyOffer(models.Model):
                                     inverse='_inverse_date_deadline')
 
     #constraints
-    _check_price_positive = models.Constraint(
-        'CHECK(price > 0)',
-        'Price must be positive.',
-    )
+    _sql_constraints = [
+        ('check_price_positive', 'CHECK(price > 0)', 'Price must be positive.'),
+    ]
 
 
     # -------------------------------------------------------------------------
@@ -80,8 +79,10 @@ class PropertyOffer(models.Model):
     # -------------------------------------------------------------------------
     # CRUD
     # -------------------------------------------------------------------------
-    @api.model
+    @api.model_create_multi
     def create(self, vals_list):
+        if isinstance(vals_list, dict):
+            vals_list = [vals_list]
         for vals in vals_list:
             property_id = vals.get('property_id')
             if property_id:

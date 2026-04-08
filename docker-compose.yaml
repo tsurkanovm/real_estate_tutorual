@@ -1,8 +1,6 @@
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: odoo:18
 
     depends_on:
       db:
@@ -10,28 +8,18 @@ services:
 
     ports:
       - "8069:8069"
-      - "8072:8072"
 
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
-      - ./docker_scripts:/opt/odoo-dev-scripts:ro
 
     secrets:
       - postgresql_password
 
     environment:
       PASSWORD_FILE: /run/secrets/postgresql_password
-      PYCHARM_DEBUG: "1"
-      PYCHARM_DEBUG_WAIT: "0"
-      PYCHARM_DEBUG_HOST: "host.docker.internal"
-      PYCHARM_DEBUG_PORT: "8888"
 
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
-    entrypoint: [ "/opt/odoo-dev-scripts/start-odoo.sh" ]
   db:
     image: postgres:18
     restart: unless-stopped

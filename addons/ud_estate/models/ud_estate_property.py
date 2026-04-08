@@ -46,30 +46,14 @@ class Property(models.Model):
     best_offer = fields.Float(string='Best Offer', copy=False, compute='_compute_best_offer')
 
     #constraints
-    _check_price_positive = models.Constraint(
-        'CHECK(price >= 0)',
-        'Price must be positive.',
-    )
-    _check_expected_price_positive = models.Constraint(
-        'CHECK(expected_price > 0)',
-        'Price must be positive.',
-    )
-    _check_garden_area_positive = models.Constraint(
-        'CHECK(garden_area >= 0)',
-        'Garden area must be positive.',
-    )
-    _check_living_area_positive = models.Constraint(
-        'CHECK(living_area > 0)',
-        'Living area must be positive.',
-    )
-    _check_facades_positive = models.Constraint(
-        'CHECK(facades > 0)',
-        'Facades must be positive.',
-    )
-    _check_bedrooms_positive = models.Constraint(
-        'CHECK(bedrooms > 0)',
-        'Bedrooms must be positive.',
-    )
+    _sql_constraints = [
+        ('check_price_positive', 'CHECK(price >= 0)', 'Price must be positive.'),
+        ('check_expected_price_positive', 'CHECK(expected_price > 0)', 'Price must be positive.'),
+        ('check_garden_area_positive', 'CHECK(garden_area >= 0)', 'Garden area must be positive.'),
+        ('check_living_area_positive', 'CHECK(living_area > 0)', 'Living area must be positive.'),
+        ('check_facades_positive', 'CHECK(facades > 0)', 'Facades must be positive.'),
+        ('check_bedrooms_positive', 'CHECK(bedrooms > 0)', 'Bedrooms must be positive.'),
+    ]
 
     @api.constrains('expected_price', 'price')
     def _check_selling_price(self):

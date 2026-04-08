@@ -2,19 +2,16 @@
     <data noupdate="1">
             <!-- Access rights for Mitchell Admin  -->
         <record id="estate_group_manager" model="res.groups">
-            <field name="user_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="users" eval="[(4, ref('base.user_admin'))]"/>
         </record>
         <record id="estate_group_user" model="res.groups">
-            <field name="user_ids" eval="[(4, ref('base.user_demo'))]"/>
+            <field name="users" eval="[(4, ref('base.user_demo'))]"/>
         </record>
-        <record id="base.default_user_group" model="res.groups">
-            <field name="implied_ids" eval="[(4, ref('ud_estate.estate_group_user'))]"/>
-        </record>
+
     </data>
 
     <!--  Properties -->
     <record id="demo_big_villa_ud_estate_property" model="ud_estate.property">
-        <field name="name">Big Villa</field>
         <field name="state">new</field>
         <field name="postcode">12345</field>
         <field name="available_from">2020-02-02</field>
@@ -32,7 +29,6 @@
         <field name="user_id" ref="base.user_demo"/>
     </record>
     <record id="demo_trailer_home_ud_estate_property" model="ud_estate.property">
-        <field name="name">Trailer home</field>
         <field name="state">cancelled</field>
         <field name="postcode">54321</field>
         <field name="available_from">1970-01-01</field>
@@ -86,60 +82,46 @@
     <record id="demo_villa_azure1_ud_estate_property_offer" model="ud_estate.property.offer">
         <field name="price">10000</field>
         <field name="validity">14</field>
-
         <field name="partner_id" ref="base.res_partner_12"/>
         <field name="property_id" ref="demo_big_villa_ud_estate_property"/>
-        <field name="property_type_id" ref="ud_estate_property_type_residential"/>
     </record>
     <record id="demo_villa_azure2_ud_estate_property_offer" model="ud_estate.property.offer">
         <field name="price">1500000</field>
         <field name="validity">14</field>
-
         <field name="partner_id" ref="base.res_partner_12"/>
         <field name="property_id" ref="demo_big_villa_ud_estate_property"/>
-        <field name="property_type_id" ref="ud_estate_property_type_residential"/>
     </record>
     <record id="demo_villa_deco_ud_estate_property_offer" model="ud_estate.property.offer">
         <field name="price">1500001</field>
         <field name="validity">14</field>
-
         <field name="partner_id" ref="base.res_partner_18"/>
         <field name="property_id" ref="demo_big_villa_ud_estate_property"/>
-        <field name="property_type_id" ref="ud_estate_property_type_residential"/>
     </record>
     <!-- City Centre Office offers (two different buyers, ascending price) -->
     <record id="demo_office_offer1_ud_estate_property_offer" model="ud_estate.property.offer">
         <field name="price">310000</field>
         <field name="validity">10</field>
-
         <field name="partner_id" ref="base.res_partner_2"/>
         <field name="property_id" ref="demo_city_office_ud_estate_property"/>
-        <field name="property_type_id" ref="ud_estate_property_type_commercial"/>
     </record>
     <record id="demo_office_offer2_ud_estate_property_offer" model="ud_estate.property.offer">
         <field name="price">335000</field>
         <field name="validity">7</field>
-
         <field name="partner_id" ref="base.res_partner_4"/>
         <field name="property_id" ref="demo_city_office_ud_estate_property"/>
-        <field name="property_type_id" ref="ud_estate_property_type_commercial"/>
     </record>
 
     <!-- Suburban Land Plot offers (two different buyers, ascending price) -->
     <record id="demo_land_offer1_ud_estate_property_offer" model="ud_estate.property.offer">
         <field name="price">82000</field>
         <field name="validity">14</field>
-
         <field name="partner_id" ref="base.res_partner_3"/>
         <field name="property_id" ref="demo_suburban_land_ud_estate_property"/>
-        <field name="property_type_id" ref="ud_estate_property_type_land"/>
     </record>
     <record id="demo_land_offer2_ud_estate_property_offer" model="ud_estate.property.offer">
         <field name="price">91000</field>
         <field name="validity">5</field>
-
-        <field name="partner_id" ref="base.res_partner_6"/>
+        <field name="partner_id" ref="base.res_partner_2"/>
         <field name="property_id" ref="demo_suburban_land_ud_estate_property"/>
-        <field name="property_type_id" ref="ud_estate_property_type_land"/>
     </record>
 </odoo>
