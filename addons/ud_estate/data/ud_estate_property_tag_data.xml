@@ -1,0 +1,26 @@
+<odoo>
+  <record id="ud_estate_property_tag_new_build" model="ud_estate.property.tag">
+    <field name="name">New Build</field>
+    <field name="color">10</field>
+  </record>
+
+  <record id="ud_estate_property_tag_renovated" model="ud_estate.property.tag">
+    <field name="name">Renovated</field>
+    <field name="color">3</field>
+  </record>
+
+  <record id="ud_estate_property_tag_sea_view" model="ud_estate.property.tag">
+    <field name="name">Sea View</field>
+    <field name="color">4</field>
+  </record>
+
+  <record id="ud_estate_property_tag_city_centre" model="ud_estate.property.tag">
+    <field name="name">City Centre</field>
+    <field name="color">1</field>
+  </record>
+
+  <record id="ud_estate_property_tag_urgent_sale" model="ud_estate.property.tag">
+    <field name="name">Urgent Sale</field>
+    <field name="color">2</field>
+  </record>
+</odoo>
