@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portfolio_page" name="Portfolio">
+        <t t-call="website.layout">
+            <t t-set="title">Portfolio — Mykhailo Tsurkanov</t>
+            <div class="container portfolio-container">
+
+                <!-- My Photo -->
+                <section class="portfolio-section portfolio-photo-section text-center">
+                    <img
+                        src="/portfolio/static/src/img/photo.jpg"
+                        alt="My Photo"
+                        class="portfolio-photo"
+                    />
+                </section>
+
+                <!-- About Myself -->
+                <section class="portfolio-section">
+                    <h2>About Myself</h2>
+                    <p>
+                        Hi, I'm Mykhailo Tsurkanov — an Odoo developer with a background in
+                        Magento 2 and 1C enterprise systems. I specialize in building custom
+                        Odoo addons, automating business processes, and integrating ERP systems
+                        with external services.
+                    </p>
+                    <p>
+                        I enjoy working on finance-related automation, data import pipelines,
+                        and performance-optimized ORM patterns. This page is a central hub for
+                        my deployed Odoo instances and open-source modules.
+                    </p>
+                </section>
+
+                <!-- Configuration Links -->
+                <section class="portfolio-section">
+                    <h2>Configuration Links</h2>
+                    <p class="text-muted">Links to my configured Odoo instances.</p>
+                    <ul class="portfolio-links">
+                        <li><a href="#">Home Finance — Local Instance</a></li>
+                        <li><a href="#">Demo Instance</a></li>
+                        <li><a href="#">Staging Instance</a></li>
+                    </ul>
+                </section>
+
+                <!-- Development Links -->
+                <section class="portfolio-section">
+                    <h2>Development Links</h2>
+                    <p class="text-muted">My Odoo modules and repositories.</p>
+                    <ul class="portfolio-links">
+                        <li><a href="#">home_finance — Personal Finance Addon</a></li>
+                        <li><a href="#">nbu_currency_rate — NBU Currency Rate Provider</a></li>
+                        <li><a href="#">GitHub Profile</a></li>
+                    </ul>
+                </section>
+
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,47 @@
+.portfolio-container {
+    max-width: 800px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.portfolio-section {
+    padding: 32px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.portfolio-section:last-child {
+    border-bottom: none;
+}
+
+.portfolio-photo-section {
+    padding-top: 48px;
+}
+
+.portfolio-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #dee2e6;
+    background-color: #f0f0f0;
+}
+
+.portfolio-section h2 {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.portfolio-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.portfolio-links li {
+    padding: 6px 0;
+}
+
+.portfolio-links li a {
+    font-size: 1rem;
+}
