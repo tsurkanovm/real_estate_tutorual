@@ -17,8 +17,8 @@ services:
       - ./addons:/mnt/extra-addons
     secrets:
       - postgresql_password
-    expose:
-      - "8069"
+    ports:
+      - "127.0.0.1:18069:8069"
     networks:
       - internal
       - proxy
