@@ -81,6 +81,6 @@ Inherits `ud_estate.property` and overrides `action_set_sold()` to auto-create a
 ### Docker Setup
 
 - `web` service: Odoo 18 on port 8069 (exposed internally only; fronted by a reverse proxy on VPS)
-- `db` service: PostgreSQL 17
+- `db` service: PostgreSQL 18
 - Odoo config: `config/odoo.conf` — addons path `/mnt/extra-addons`, DB host `db`
 - Networks: `internal` (web↔db), `proxy` (external, for reverse proxy access to web)

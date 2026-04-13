@@ -10,6 +10,7 @@
 !docker-compose.yaml
 !Dockerfile
 !docker_scripts/**
+!CLAUDE.md
 
 
 src/**
