@@ -32,7 +32,7 @@ class Property(models.Model):
         self.ensure_one()
 
         return {
-            'name': self.description or self.name,
+            'name': self.name,
             'quantity': 1,
             'price_unit': self.price,
         }
