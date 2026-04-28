@@ -268,7 +268,7 @@ msgstr "Валюта"
 #: model:ir.actions.act_window,name:ud_estate.ud_estate_dashboard_action
 #: model:ir.ui.menu,name:ud_estate.ud_estate_dashboard_model_menu_action
 msgid "Dashboard"
-msgstr "Панель"
+msgstr "Дашборд"
 
 #. module: ud_estate
 #: model:ir.model.fields,field_description:ud_estate.field_ud_estate_property_offer__date_deadline
@@ -384,6 +384,11 @@ msgstr "Житлова площа (кв. м)"
 #: model:ir.model.constraint,message:ud_estate.constraint_ud_estate_property_check_living_area_positive
 msgid "Living area must be positive."
 msgstr "Житлова площа має бути додатною."
+
+#. module: ud_estate
+#: model:ud_estate.dashboard,name:ud_estate.ud_estate_dashboard_main
+msgid "Main Dashboard"
+msgstr "Головний Дашборд"
 
 #. module: ud_estate
 #: model:res.groups,name:ud_estate.estate_group_manager
