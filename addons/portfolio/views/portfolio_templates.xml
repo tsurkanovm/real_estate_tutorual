@@ -55,4 +55,15 @@
             </div>
         </t>
     </template>
+
+    <template id="project_page" name="Project Page">
+        <t t-call="website.layout">
+            <t t-set="title" t-value="project.name"/>
+            <div class="container portfolio-container">
+                <h1 class="portfolio-project-title" t-out="project.name"/>
+                <div class="project-body" t-out="project.body"/>
+            </div>
+        </t>
+    </template>
+
 </odoo>

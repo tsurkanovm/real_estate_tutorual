@@ -7,6 +7,8 @@
     'license': 'LGPL-3',
     'depends': ['website'],
     'data': [
+        'security/ir.model.access.csv',
+        'views/portfolio_project_views.xml',
         'views/portfolio_templates.xml',
     ],
     'assets': {
